@@ -1,7 +1,9 @@
 import Link from "next/link";
-import Logo from "../../public/Logo.png"
+import Logo from "../../../../public/Logo.png";
 import Image from "next/image";
-import CartLogo from "../../public/cart.svg"
+import CartLogo from "../../../../public/cart.svg";
+import ProfileIcon from "../../../../public/ProfileIcon.svg"
+
 export default function Header(){
 
 
@@ -16,7 +18,10 @@ export default function Header(){
                     <li className="hover:text-accent"><Link href={"/aboutUs"}>About</Link></li>
                     <li className="hover:text-accent"><Link href={"/contact"}>Contact</Link></li>
                 </ul>
-                <button className="flex gap-2 bg-secondary p-2 rounded-md items-center justify-center text-Text"><Image src={CartLogo} alt="cart"></Image> 0</button>
+                <div className="flex items-center justify-center gap-3">
+                <button className="flex gap-2 bg-secondary p-2 rounded-md items-center justify-center text-Text hover:bg-white"><Image src={CartLogo} alt="cart"></Image> Cart</button>
+                <Link className="flex gap-2 bg-secondary p-2 rounded-md items-center justify-center text-Text hover:bg-white" href={"/profilePage"}><Image src={ProfileIcon} alt="Profile page icon"></Image>Profile</Link>
+                </div>
             </div>
         </div>
         </>
