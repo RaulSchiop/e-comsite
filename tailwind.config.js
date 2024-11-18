@@ -15,7 +15,7 @@ module.exports = {
         accent:"#FF2F00",
         headerBg:"#1E1C1C",
         secondarytext:"#5f5959",
-       cardBackground: "#3E3838"
+       cardBackground: "#000000"
 
 
       },
