@@ -1,6 +1,6 @@
-import Image from "next/image";
-import Header from "./components/header/Hader";
 
+import Header from "./components/header/Hader";
+import HeroSection from "./components/heroSection/HeroSection";
           // teste the conncetion
           //import {connectToDatabase} from "../app/utils/mongoDb"
 
@@ -13,7 +13,8 @@ export default function Home() {
 
     <>
     <Header></Header>
-   
+    <HeroSection></HeroSection>
+
     </>
   );
 }

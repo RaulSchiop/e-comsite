@@ -11,8 +11,8 @@ export default function Header(){
 
     return (
         <>
-        <HaderAnim className="flex items-center justify-center bg-headerBg text-Text mt-3" >
-            <div className="flex  items-center justify-center bg-background p-5 mt-3 rounded-2xl h-24 text-xs gap-2 lg:gap-40 lg:text-lg sm:gap-8 sm:text-sm ">
+        <HaderAnim className="flex items-center w-full justify-center text-Text mt-3" >
+            <div className="flex  items-center w-[90%] justify-center bg-secondary p-5 mt-3 rounded-2xl h-24 text-xs gap-2 lg:gap-40 lg:text-lg sm:gap-8 sm:text-sm ">
                 <Link href={"/"}><Image src={Logo} width={150} height={150} alt="logo" ></Image></Link>
                 <ul className="flex items-center justify-center gap-2 lg:gap-12 sm:gap-7">
                     <li className="hover:text-accent"><Link href={"/"}>Home</Link></li>
@@ -21,11 +21,11 @@ export default function Header(){
                     <li className="hover:text-accent"><Link href={"/contact"}>Contact</Link></li>
                 </ul>
                 <div className="flex items-center justify-center gap-3">
-                <Button className="flex gap-2 bg-secondary p-2 rounded-md items-center justify-center text-Text hover:bg-white hover:text-accent">
+                <Button className="flex gap-2 bg-accent p-2 rounded-md items-center justify-center text-Text hover:bg-secondary ">
               <Image src={CartLogo} alt="cart" /> Cart
             </Button>
 
-        <Button><Link className="flex gap-2 bg-secondary p-2 rounded-md items-center justify-center text-Text hover:bg-white hover:text-accent" href={"/profilePage"}><Image src={ProfileIcon} alt="Profile page icon"></Image>Profile</Link> </Button> 
+        <Button><Link className="flex gap-2 bg-accent p-2 rounded-md items-center justify-center text-Text hover:bg-secondary " href={"/profilePage"}><Image src={ProfileIcon} alt="Profile page icon"></Image>Profile</Link> </Button> 
                 </div>
             </div>
         </HaderAnim> 
