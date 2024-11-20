@@ -25,7 +25,9 @@ export default function Header(){
               <Image src={CartLogo} alt="cart" /> Cart
             </Button>
 
-        <Button><Link className="flex gap-2 bg-accent p-2 rounded-md items-center justify-center text-Text " href={"/profilePage"}><Image src={ProfileIcon} alt="Profile page icon"></Image>Profile</Link> </Button> 
+        <Button>
+              <Link className="flex gap-2 bg-accent p-2 rounded-md items-center justify-center text-Text " href={"/profilePage"}>
+                <Image src={ProfileIcon} alt="Profile page icon"></Image>Log in</Link> </Button> 
                 </div>
             </div>
         </HaderAnim> 
