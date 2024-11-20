@@ -10,7 +10,7 @@ import HeroSt from "../Aminations/heroPage/heroSt"
 export default function CategoryPage(){
 
 return (
-<div className="grid  grid-cols-1 sm:grid-cols-1 lg:grid-cols-[2fr_1fr] gap-8 bg-cardBackground mt-10 p-10">
+<div className="grid mb-16 grid-cols-1 sm:grid-cols-1 lg:grid-cols-[2fr_1fr] gap-8 bg-cardBackground mt-10 p-10">
   
  
   <HeroSt className="items-center lg:row-span-2 justify-center bg-white rounded-2xl p-8 flex flex-col gap-2">

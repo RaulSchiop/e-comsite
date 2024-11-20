@@ -2,6 +2,7 @@
 import Header from "./components/header/Hader";
 import HeroSection from "./components/firstPage/heroSection/HeroSection";
 import CategoryPage from "./components/firstPage/CategoryPage";
+import Card from "./components/firstPage/Card/cardsPage";
           // teste the conncetion
           //import {connectToDatabase} from "../app/utils/mongoDb"
 
@@ -15,7 +16,8 @@ export default function Home() {
     <>
     <Header></Header>
     <HeroSection></HeroSection>
-    <CategoryPage></CategoryPage>
+    <CategoryPage></CategoryPage> 
+    <Card></Card>
     </>
   );
 }
