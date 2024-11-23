@@ -9,6 +9,7 @@ const Button = ({ children, className, ...props }) => (
     transition={{ type: "spring", stiffness: 400, damping: 10 }} 
     className={className} 
     {...props}
+    
   >
     {children} {}
   </motion.button>

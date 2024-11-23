@@ -26,7 +26,7 @@ export default function Header(){
             </Button>
 
         <Button>
-              <Link className="flex gap-2 bg-accent p-2 rounded-md items-center justify-center text-Text " href={"/profilePage"}>
+              <Link className="flex gap-2 bg-accent p-2 rounded-md items-center justify-center text-Text " href={"/logIn"}>
                 <Image src={ProfileIcon} alt="Profile page icon"></Image>Log in</Link> </Button> 
                 </div>
             </div>
