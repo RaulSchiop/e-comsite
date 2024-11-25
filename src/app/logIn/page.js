@@ -18,7 +18,7 @@ export default function LogIn(){
         <div>
         <AnimatePresence mode="wait">
           {change === true ? (
-            <motion.div className="flex h-screen w-full items-center justify-center lg:gap-36 flex-wrap bg-black"
+            <motion.div className="flex h-screen w-full items-center justify-center lg:gap-36 flex-wrap bg-black sm:gap-10"
               key="logInView"
               
               initial={{ opacity: 0 }}
