@@ -1,8 +1,9 @@
 import Header from "../components/header/Hader"
+import AnimationOpacity from "../components/Aminations/opacityAnimation"
 export default function AboutUs(){
 
     return (
-        <div>
+        <AnimationOpacity>
         <Header></Header>
         <section className="bg-black p-10 mt-10">
         <h1 className=" text-primary text-3xl font-bold mb-4">About Us</h1>
@@ -22,7 +23,7 @@ export default function AboutUs(){
           <a href="/products" className="text-accent hover:underline">Shop from us</a> for a seeamles experience
         </p>
       </section>
-      </div>
+      </AnimationOpacity>
       
     )
 }

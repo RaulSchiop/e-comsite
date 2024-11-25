@@ -12,6 +12,7 @@ const HeroDr = ({ children, className }) => {
       initial={{ opacity: 0, x: 500 }}
       animate={isInView ? { opacity: 1, x: 0 } : {}}
       className={className}
+      
     >
       {children}
     </motion.div>
