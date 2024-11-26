@@ -7,7 +7,7 @@ export default function Footer(){
 
     return(
 
-    <div>
+    <div className="relative bottom-0 w-full ">
 
 <div>
         <div className="flex items-center h-40 w-full justify-center text-Text mt-3" >
