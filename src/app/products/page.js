@@ -32,7 +32,7 @@ export default function Products(){
                    {products.map((prod,index)=>(
 
                     <li key={prod.id||index} className="bg-black flex gap-3 flex-col justify-end rounded-xl p-4 transition-transform duration-300 hover:scale-110">
-                    <Image src={prod.images[0]} height={400} width={400} alt={prod.name}></Image>
+                    <Image src={prod.images[0]} height={400} width={400} alt={prod.name} ></Image>
                     <h2 className="text-Text">{prod.name}</h2>
                     <p className="text-accent">{prod.price} lei</p>
                     </li>   
