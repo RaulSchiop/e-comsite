@@ -1,20 +1,17 @@
-import mongoose from 'mongoose';
-
+import { MongoClient } from 'mongodb';
 
 export async function connectToDatabase() {
-
-  if (mongoose.connection.readyState===1) {
-    console.log('db is already in use');
-    return;
-  }
+  const client = new MongoClient(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
 
   try {
-    
-    await mongoose.connect(process.env.MONGODB_URI);
-
-  
-    console.log('connected to db');
+    await client.connect();
+    console.log('Connected to MongoDB');
+    return client; 
   } catch (error) {
-    console.error('connection error: ', error);
+    console.error('Error connecting to database:', error);
+    throw new Error('Failed to connect to database');
   }
 }
