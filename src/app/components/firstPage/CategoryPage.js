@@ -20,7 +20,7 @@ return (
     <p className="text-secondarytext  mb-4 w-3/4">Browse a wide range of pre-built PCs tailored for gaming, work, and multimedia tasks, ready to perform right out of the box.</p>
     
     <Button className="items">
-    <Link href="/products/Pcs" className="bg-accent text-white  rounded-md p-2 text-center hover:bg-white hover:text-accent border-2 border-accent">
+    <Link href="/products" className="bg-accent text-white  rounded-md p-2 text-center hover:bg-white hover:text-accent border-2 border-accent">
       View More
     </Link>
     </Button>

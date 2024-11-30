@@ -1,5 +1,4 @@
-import { connectToDatabase } from "@/app/utils/mongoDb";  // The updated function
-import { MongoClient } from 'mongodb';
+import { connectToDatabase } from "@/app/utils/mongoDb";  
 
 export async function GET() {
   try {
@@ -8,7 +7,7 @@ export async function GET() {
 
     const db = client.db("shop"); 
     const productsCollection = db.collection("products"); 
-    const products = await productsCollection.find({}).toArray(); 
+    const products = await productsCollection.find({}).toArray();
 
     if (products.length === 0) {
       return new Response(

@@ -3,6 +3,10 @@ import MotherBoard from "../../../../../public/motherBoard.png"
 import Button from "../../Aminations/Btn"
 export default function Card(){
 
+
+    
+
+
     return(
         <div className="flex items-center justify-center flex-col p-8">
       
