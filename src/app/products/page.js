@@ -34,7 +34,7 @@ export default function Products(){
                    {products.map((prod,index)=>(
 
                     <li key={prod.id||index} className="bg-black flex gap-3 flex-col justify-end rounded-xl p-4 transition-transform duration-300 hover:scale-110">
-                   <div className="w-full h-64 bg-gray-200 relative">
+                   <div className="w-full h-64 bg-black relative">
                     <Image src={prod.images[0]} alt={prod.name} fill sizes="100%" className="object-cover"
           />
         </div>
