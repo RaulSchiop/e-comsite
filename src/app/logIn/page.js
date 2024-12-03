@@ -31,7 +31,14 @@ export default function LogIn(){
 
       router.push("/");
       
-    }
+      if(result){
+        setInterval(() => {
+          localStorage.removeItem('UserLogIn')
+      }, 24 * 60 * 60 * 1000);
+  }
+      }
+      
+    
 
 
     async function handleCreateAcc(event){

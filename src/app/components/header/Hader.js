@@ -2,10 +2,10 @@ import Link from "next/link";
 import Logo from "../../../../public/Logo.png";
 import Image from "next/image";
 
-import ProfileIcon from "../../../../public/ProfileIcon.svg"
-import Button from "../Aminations/Btn";
+
 import HaderAnim from "../Aminations/headerAnimation";
 import Cart from "../cart/cart";
+import LogInButton from "./logInButton";
 
 
 export default function Header(){
@@ -25,9 +25,7 @@ export default function Header(){
                 <div className="flex items-center justify-center gap-3 ">
                 <Cart></Cart>
 
-        <Button>
-              <Link className="flex gap-2 bg-accent p-2 rounded-md items-center justify-center text-Text text-nowrap" href={"/logIn"}>
-                <Image  className="hidden sm:hidden md:block text-nowrap" src={ProfileIcon} alt="Profile page icon"></Image>Log in</Link> </Button> 
+                <LogInButton></LogInButton>
                 </div>
             </div>
         </HaderAnim> 
