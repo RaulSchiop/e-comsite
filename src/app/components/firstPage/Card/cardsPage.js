@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image"
-import MotherBoard from "../../../../../public/motherBoard.png"
+
 import Button from "../../Aminations/Btn"
 import { useEffect,useState } from "react"
 import Link from "next/link"
@@ -10,7 +10,7 @@ export default function Card(){
     const [sliceNumber, setSliceNumber] = useState(3); 
 
   function moreProducts() {
-    setSliceNumber(sliceNumber + 1);
+    setSliceNumber(sliceNumber + 3);
   }
 
     useEffect(() => {
