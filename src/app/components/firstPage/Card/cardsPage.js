@@ -3,6 +3,7 @@ import Image from "next/image"
 import MotherBoard from "../../../../../public/motherBoard.png"
 import Button from "../../Aminations/Btn"
 import { useEffect,useState } from "react"
+import Link from "next/link"
 export default function Card(){
 
     const [products,setProducts]=useState([]);
@@ -32,13 +33,14 @@ export default function Card(){
                 <h1 className=" text-accent text-3xl lg:text-5xl font-bold mb-10">New Arrivals</h1>
                 <ul className="grid grid-cols-3 gap-6 mb-6 ">
                     {products.slice(0, sliceNumber).map((prod,index)=>(
-                         <li key={prod.id || index} className="bg-black rounded-xl p-4 flex flex-col justify-between h-full">
-                    
-                    <Image src={prod.images[0]} alt={prod.name} width={400} height={400} />
+                    <li key={prod.id || index} className="bg-black rounded-xl p-4 flex flex-col justify-between h-full">
+                        <Link href={`/products/${prod._id}`}>
+                        <Image src={prod.images[0]} alt={prod.name} width={400} height={400} />
                         <div>
                             <h2 className="text-Text">{prod.name}</h2>
                             <p className="text-accent">{prod.price}</p>
                          </div>
+                         </Link>
                      </li>
                     ))}
                    

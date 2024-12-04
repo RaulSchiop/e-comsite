@@ -19,7 +19,7 @@ export default function LogIn(){
       }
       console.log(dataLog)
       const  response=await fetch("/api/logIn",{
-        method:'GET',
+        method:'POST',
         headers:{
           'Content-Type': 'application/json',
         },

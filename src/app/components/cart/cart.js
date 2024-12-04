@@ -20,7 +20,7 @@ export default function Cart(){
     return(
     <div>
         <Button onClick={handleModalOpen} className="flex gap-2 bg-accent p-2 rounded-md items-center justify-center text-Text ">
-              <Image className="hidden sm:hidden md:block text" src={CartLogo} alt="cart" /> Cart
+              <Image height={30} width={30} src={CartLogo} alt="cart" /> 
         </Button>
         
         <Modal show={modalIsOpen} onClose={handleModalClose}>
