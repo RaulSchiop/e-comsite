@@ -6,7 +6,7 @@ export async function connectToDatabase() {
   try {
     await client.connect();
     console.log('Connected to MongoDB');
-    return client; 
+    return client;
   } catch (error) {
     console.error('Error connecting to database:', error);
     throw new Error('Failed to connect to database');

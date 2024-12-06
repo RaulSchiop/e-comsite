@@ -28,7 +28,7 @@ export default function LogIn(){
       const result = await response.json();
       console.log("Login successful:", response);
       localStorage.setItem('UserLogIn', JSON.stringify({ id: result.id }));
-
+      localStorage.removeItem('UserLogin');
       router.push("/");
       
       if(result){
@@ -71,6 +71,7 @@ export default function LogIn(){
 
     function handleLayoutChange(){
         setChange(!change);
+        localStorage.removeItem('UserLogin');
         localStorage.removeItem('UserLogIn');
     }
 
