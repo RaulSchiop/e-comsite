@@ -10,7 +10,7 @@ import Button from "../components/Aminations/Btn"
 import Modal from "../components/modal/Modal"
 
 export default function Products(){
-  const [selectedProduct, setSelectedProduct] = useState(null);
+    const [selectedProduct, setSelectedProduct] = useState(null);
     const [products,setProducts]=useState([]);
     const [modalOpen,setModalOpen]=useState(false);
 

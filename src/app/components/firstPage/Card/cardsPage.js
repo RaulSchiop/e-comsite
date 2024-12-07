@@ -1,13 +1,25 @@
 'use client'
 import Image from "next/image"
-
+import Modal from "../../modal/Modal"
 import Button from "../../Aminations/Btn"
 import { useEffect,useState } from "react"
-import Link from "next/link"
-export default function Card(){
 
+
+export default function Card(){
+    
+    const [selectedProduct, setSelectedProduct] = useState(null);
     const [products,setProducts]=useState([]);
     const [sliceNumber, setSliceNumber] = useState(3); 
+    const [modalOpen,setModalOpen]=useState(false);
+
+    function handleModalClose(){
+      setModalOpen(false);
+    }
+
+    function handleModalOpen(product){
+      setModalOpen(true)
+       setSelectedProduct(product);
+    }
 
   function moreProducts() {
     setSliceNumber(sliceNumber + 3);
@@ -41,13 +53,35 @@ export default function Card(){
                 <ul className="grid grid-cols-3 gap-6 mb-6 ">
                 {products.slice(0, sliceNumber).map((prod,index)=>(
                     <li key={prod.id || index} className="bg-black rounded-xl p-4 flex flex-col justify-between h-full">
-                      <Link href={`/products/${prod._id}`}>
+                      <div onClick={()=>handleModalOpen(prod)}>
                         <Image src={prod.images[0]} alt={prod.name} width={400} height={400} />
                         <div>
                           <h2 className="text-Text">{prod.name}</h2>
                           <p className="text-accent">{prod.price}</p>
                         </div>
-                      </Link>
+                        </div>
+                      {modalOpen && selectedProduct &&(
+                      <Modal show={modalOpen} onClose={handleModalClose}>
+                      <div className=" w-full p-8 flex justify-center flex-col items-center">
+                          <h1 className="text-4xl font-semibold text-gray-900 mb-6">{selectedProduct.name}</h1>
+                            <div className="flex flex-col md:flex-row gap-10 max-w-6xl w-full">
+                              <div className="flex items-center justify-center w-full md:w-1/2">
+                                <div className="relative w-full  rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition duration-300">
+                                  <Image src={selectedProduct.images[0]} alt="Desktop Product" width={800} height={800} />
+                                </div>
+                              </div>
+                                    <div className="flex flex-col justify-center w-full md:w-1/2 ">
+                                        <h2 className="text-accent text-3xl font-bold mb-4">{selectedProduct.price}$</h2>
+                                            <div className=" text-secondary text-lg mb-6">
+                                                <p className="text-white">Warranty {selectedProduct.warranty}</p>
+                                                <p className="text-white">Free shipping</p>
+                                            </div>
+                                        <Button className="bg-accent text-white py-2 px-2 rounded-md text-center hover:bg-white hover:text-accent border-2 border-accent">Add to Cart</Button>
+                                        
+                                    </div>
+                            </div>
+                          </div>
+                      </Modal>)}
                     </li>
                   ))}    
                 </ul>
