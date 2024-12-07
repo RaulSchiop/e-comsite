@@ -69,10 +69,16 @@ export default function Products(){
                       </div>
                
                       </div>
-                      {modalOpen && selectedProduct &&(
-                      <Modal show={modalOpen} onClose={handleModalClose}>
+                      
+                </li>   
+                
+             
+
+                   ))}
+                   {modalOpen && selectedProduct &&(
+                      <Modal show={modalOpen} onClose={handleModalClose} >
                       <div className=" w-full p-8 flex justify-center flex-col items-center">
-                          <h1 className="text-4xl font-semibold text-gray-900 mb-6">{selectedProduct.name}</h1>
+                          <h1 className="text-4xl font-semibold text-white mb-6">{selectedProduct.name}</h1>
                             <div className="flex flex-col md:flex-row gap-10 max-w-6xl w-full">
                               <div className="flex items-center justify-center w-full md:w-1/2">
                                 <div className="relative w-full  rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition duration-300">
@@ -88,15 +94,25 @@ export default function Products(){
                                         <Button className="bg-accent text-white py-2 px-2 rounded-md text-center hover:bg-white hover:text-accent border-2 border-accent">Add to Cart</Button>
                                         
                                     </div>
+                                    
+                            </div>
+                            <div className="grid grid-cols-3 grid-rows-2 gap-4 mt-6">
+                                {Array.isArray(selectedProduct.features) ? (
+                                  selectedProduct.features.map((feature, idx) => (
+                                    <div key={idx} className="bg-gray-800 text-white rounded-lg p-4 shadow">
+                                      {feature}
+                                    </div>
+                                  ))
+                                ) : (
+                                  <p className="text-gray-400">No features available</p>
+                                )}
+                            </div>
+
+                            <div className="mt-6 bg-gray-800 text-white rounded-lg p-4 shadow">
+                              {selectedProduct.description}
                             </div>
                           </div>
                       </Modal>)}
-                </li>   
-                
-             
-
-                   ))}
-                   
 
               </ul>
             

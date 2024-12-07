@@ -60,7 +60,11 @@ export default function Card(){
                           <p className="text-accent">{prod.price}</p>
                         </div>
                         </div>
-                      {modalOpen && selectedProduct &&(
+                   
+                    </li>
+                  ))}    
+
+{modalOpen && selectedProduct &&(
                       <Modal show={modalOpen} onClose={handleModalClose}>
                       <div className=" w-full p-8 flex justify-center flex-col items-center">
                           <h1 className="text-4xl font-semibold text-gray-900 mb-6">{selectedProduct.name}</h1>
@@ -82,8 +86,6 @@ export default function Card(){
                             </div>
                           </div>
                       </Modal>)}
-                    </li>
-                  ))}    
                 </ul>
             <Button onClick={moreProducts} className="bg-accent text-white py-2 px-4 rounded-md text-center hover:bg-white hover:text-accent border-2 border-accent">See More</Button>
         </div>
