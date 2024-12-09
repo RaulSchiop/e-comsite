@@ -64,8 +64,13 @@ export default function Cart(){
             }
            
         </ul>
-        <Button className="bg-accent text-white mt-10 py-2 px-2 rounded-md text-center hover:bg-white hover:text-accent border-2 border-accent">Submit order</Button>
-                              
+        <div className="flex items-center justify-between">
+            <Button className="bg-accent text-white mt-10 py-2 px-2 rounded-md text-center hover:bg-white hover:text-accent border-2 border-accent">Submit order</Button>
+            {cart.length===0?<></>:(
+            <h1> {cart.reduce((sum, item) => sum + (item.price * item.quantity), 0)}$</h1>
+            )
+            }
+        </div>                 
         </Modal>
     </div>
     )

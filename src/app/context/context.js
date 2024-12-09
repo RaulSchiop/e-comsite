@@ -14,6 +14,9 @@ export function useCartContext(){ return useContext(cartContext)};
 
 export function CartProvider ({children}) {
     const [cart, setCart] = useState([]);
+
+    
+
     function addToCart(product) {
         setCart((prevCart) => {
             const existentCartProductIndex = prevCart.findIndex((item) => item._id === product._id);
