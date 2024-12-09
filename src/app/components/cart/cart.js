@@ -5,16 +5,29 @@ import Image from "next/image"
 import CartLogo from "../../../../public/cart.svg";
 import { useState } from "react";
 import Modal from "../modal/Modal";
+import { useCartContext } from "@/app/context/context";
 
 export default function Cart(){
 
     const [modalIsOpen,setModalIsOpen]=useState(false);
+
+   const {cart, addToCart , deleteFromCart}= useCartContext()
 
     function handleModalOpen(){
         setModalIsOpen(true);
     }
     function handleModalClose(){
         setModalIsOpen(false);
+    }
+
+    function handleAddToCart(product){
+        addToCart(product);
+
+    }
+
+    function handleDeleteFromCart(productId){
+        deleteFromCart(productId);
+        
     }
 
     return(
@@ -30,42 +43,26 @@ export default function Cart(){
            
 
         <ul className="flex flex-col gap-y-4">
-            <li className="bg-black flex items-center justify-between px-4 py-1 rounded-lg">
-                <h1 >dekstop gameing pc</h1>
-                <p>5000 $</p>
+
+
+        {cart.length === 0 ? <p className="text-accent text-3xl">empty cart</p>:
+        cart.map((product,index)=>(
+            <li key={product.id || index} className="bg-black flex items-center justify-between px-4 py-1 rounded-lg">
+
+
+
+               <h1 >{product.name}</h1>
+                <p>{product.price*product.quantity}$</p>
                 <div>
-                    <Button>+</Button>
-                    <p>1</p>
-                    <Button>-</Button>
+                    <Button onClick={()=>handleAddToCart(product)}>+</Button>
+                    <p>{product.quantity}</p>
+                    <Button onClick={()=>handleDeleteFromCart(product._id)}>-</Button>
                 </div>
+                
             </li>
-            <li className="bg-black flex items-center justify-between px-4 py-2 rounded-lg">
-                <h1 >dekstop gameing pc</h1>
-                <p>5000 $</p>
-                <div>
-                    <Button>+</Button>
-                    <p>1</p>
-                    <Button>-</Button>
-                </div>
-            </li>
-            <li className="bg-black flex items-center justify-between px-4 py-2 rounded-lg">
-                <h1 >dekstop gameing pc</h1>
-                <p>5000 $</p>
-                <div>
-                    <Button>+</Button>
-                    <p>1</p>
-                    <Button>-</Button>
-                </div>
-            </li>
-            <li className="bg-black flex items-center justify-between px-4 py-2 rounded-lg">
-                <h1 >dekstop gameing pc</h1>
-                <p>5000 $</p>
-                <div>
-                    <Button>+</Button>
-                    <p>1</p>
-                    <Button>-</Button>
-                </div>
-            </li>
+        ))
+            }
+           
         </ul>
         <Button className="bg-accent text-white mt-10 py-2 px-2 rounded-md text-center hover:bg-white hover:text-accent border-2 border-accent">Submit order</Button>
                               

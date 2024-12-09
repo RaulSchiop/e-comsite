@@ -17,6 +17,8 @@ export default function Products(){
     const [products,setProducts]=useState([]);
     const [modalOpen,setModalOpen]=useState(false);
     
+    const {cart,addToCart}=useCartContext();
+console.log(cart)
 
     function handleModalClose(){
       setModalOpen(false);
@@ -25,6 +27,10 @@ export default function Products(){
     function handleModalOpen(product){
       setModalOpen(true)
        setSelectedProduct(product);
+    }
+
+    function handleAddToCart(product){
+        addToCart(product);   
     }
           
     useEffect(() => {
@@ -61,7 +67,9 @@ export default function Products(){
                    {products.map((prod,index)=>(
             
                 <li key={prod.id||index} className="bg-black flex gap-3 flex-col justify-end rounded-xl p-4 transition-transform duration-300 hover:scale-110">
-                     <div onClick={() => handleModalOpen(prod)}>
+                     <div onClick={(e) => {
+                       e.stopPropagation(); 
+                      handleModalOpen(prod)}}>
                       
                    <div className="w-full h-64 relative">
                       <Image src={prod.images[0]} alt={prod.name} fill sizes="100%" className="object-cover"/>
@@ -69,7 +77,9 @@ export default function Products(){
                       <h2 className="text-Text">{prod.name}</h2>
                       <div className="flex justify-between items-center mt-4">
                         <p className="text-accent">{prod.price} lei</p>
-                        <Button className="bg-accent text-white py-1 px-2 rounded-md text-center hover:bg-white hover:text-accent border-2 border-accent">Add to Cart</Button>
+                        <Button onClick={(e)=>{ 
+                          e.stopPropagation();
+                          handleAddToCart(prod)}} className="bg-accent text-white py-1 px-2 rounded-md text-center hover:bg-white hover:text-accent border-2 border-accent">Add to Cart</Button>
                       </div>
                
                       </div>
@@ -95,7 +105,9 @@ export default function Products(){
                                                 <p className="text-white">Warranty {selectedProduct.warranty}</p>
                                                 <p className="text-white">Free shipping</p>
                                             </div>
-                                        <Button className="bg-accent text-white py-2 px-2 rounded-md text-center hover:bg-white hover:text-accent border-2 border-accent">Add to Cart</Button>
+                                        <Button onClick={(e)=>{
+                                           e.stopPropagation(); 
+                                          handleAddToCart(selectedProduct)}} className="bg-accent text-white py-2 px-2 rounded-md text-center hover:bg-white hover:text-accent border-2 border-accent">Add to Cart</Button>
                                         
                                     </div>
                                     
