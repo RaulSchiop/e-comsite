@@ -10,11 +10,13 @@ import Button from "../components/Aminations/Btn"
 import Modal from "../components/modal/Modal"
 import Footer from "../components/Footer/Footer"
 import {motion} from "framer-motion"
+import { useCartContext } from "../context/context"
 
 export default function Products(){
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [products,setProducts]=useState([]);
     const [modalOpen,setModalOpen]=useState(false);
+    
 
     function handleModalClose(){
       setModalOpen(false);

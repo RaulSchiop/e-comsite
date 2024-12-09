@@ -21,7 +21,7 @@ export default function Cart(){
     <div>
         
         <Button onClick={handleModalOpen} className="flex gap-2 bg-accent p-2 rounded-md items-center justify-center text-Text ">
-              <Image height={30} width={30} src={CartLogo} alt="cart" /> 
+              <Image height={30} width={30} src={CartLogo} alt="cart" />
         </Button>
 
         
