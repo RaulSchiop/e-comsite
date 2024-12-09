@@ -55,9 +55,11 @@ export default function Card(){
                     <li key={prod.id || index} className="bg-black rounded-xl p-4 flex flex-col justify-between h-full">
                       <div onClick={()=>handleModalOpen(prod)}>
                         <Image src={prod.images[0]} alt={prod.name} width={400} height={400} />
-                        <div>
-                          <h2 className="text-Text">{prod.name}</h2>
+                        <h2 className="text-Text">{prod.name}</h2>
+                        <div className="flex justify-between items-center mt-4">
+                          
                           <p className="text-accent">{prod.price}</p>
+                          <Button className="bg-accent text-white py-1 px-2 rounded-md text-center hover:bg-white hover:text-accent border-2 border-accent">Add to Cart</Button>
                         </div>
                         </div>
                    

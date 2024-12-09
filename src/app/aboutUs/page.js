@@ -1,8 +1,10 @@
 import Header from "../components/header/Hader"
 import AnimationOpacity from "../components/Aminations/opacityAnimation"
+import Footer from "../components/Footer/Footer"
 export default function AboutUs(){
 
     return (
+      <div className="flex flex-col min-h-screen" >
         <AnimationOpacity>
         <Header></Header>
         <section className="bg-black p-10 mt-10">
@@ -24,6 +26,7 @@ export default function AboutUs(){
         </p>
       </section>
       </AnimationOpacity>
-      
+      <Footer></Footer>
+      </div>
     )
 }

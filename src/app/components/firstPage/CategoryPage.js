@@ -30,25 +30,17 @@ return (
  
   <HeroDr className=" items-start bg-white rounded-2xl p-8 flex flex-col gap-2">
     <Image height={150} width={150} src={Processor} alt="Processor image"></Image>
-    <h3 className="text-xl font-semibold mb-2">Processors</h3>
-    <p className="text-secondarytext  mb-4">Discover high-performance processors designed to enhance your computing power for both gaming and productivity tasks.</p>
-    <Button>
-    <Link href="/products/processors" className="bg-accent text-white  rounded-md p-2 text-center hover:bg-white hover:text-accent border-2 border-accent">
-      View More
-    </Link>
-    </Button>
+    <h3 className="text-xl font-semibold mb-2">Processors we use</h3>
+    <p className="text-secondarytext  mb-4">"High-performance processors designed to deliver exceptional speed and efficiency, perfect for gaming, multitasking, and demanding productivity tasks."</p>
+   
   </HeroDr>
 
 
   <HeroDr className="items-start bg-white rounded-2xl p-8 flex flex-col gap-2">
     <Image  src={Motherboard} alt="Motherboard" height={150} width={150}></Image>
-    <h3 className="text-xl font-semibold mb-2">Motherboards</h3>
-    <p className="text-secondarytext  mb-4">Browse a wide range of pre-built PCs tailored for gaming, work, and multimedia tasks, ready to perform right out of the box.</p>
-    <Button>
-    <Link href="/products/motherBoards" className="bg-accent text-white  rounded-md p-2 text-center hover:bg-white hover:text-accent border-2 border-accent">
-      View More
-    </Link>
-    </Button>
+    <h3 className="text-xl font-semibold mb-2">Motherboards we use</h3>
+    <p className="text-secondarytext  mb-4">"Advanced motherboards offering unmatched reliability, seamless compatibility, and the versatility needed to unlock your system's full potential."</p>
+   
   </HeroDr>
 
 </div>

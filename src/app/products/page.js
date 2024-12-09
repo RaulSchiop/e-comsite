@@ -8,6 +8,8 @@ import AnimationOpacity from "../components/Aminations/opacityAnimation"
 import Link from "next/link"
 import Button from "../components/Aminations/Btn"
 import Modal from "../components/modal/Modal"
+import Footer from "../components/Footer/Footer"
+import {motion} from "framer-motion"
 
 export default function Products(){
     const [selectedProduct, setSelectedProduct] = useState(null);
@@ -47,7 +49,7 @@ export default function Products(){
     console.log(products);
 
     return(
-        <>
+        <div className="flex flex-col min-h-screen">
         <Header></Header>
         <AnimationOpacity>
         <div className="flex items-center justify-center flex-col p-8 flex-wrap">
@@ -118,6 +120,9 @@ export default function Products(){
             
         </div>
         </AnimationOpacity>
-        </>
+        <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.5,delay:1}}>
+          <Footer></Footer>
+        </motion.div>
+        </div>
     )
 }
