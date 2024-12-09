@@ -3,10 +3,10 @@ import Image from "next/image"
 import Modal from "../../modal/Modal"
 import Button from "../../Aminations/Btn"
 import { useEffect,useState } from "react"
-
+import { useCartContext } from "@/app/context/context"
 
 export default function Card(){
-    
+    const {addToCart}=useCartContext()
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [products,setProducts]=useState([]);
     const [sliceNumber, setSliceNumber] = useState(3); 
@@ -19,6 +19,10 @@ export default function Card(){
     function handleModalOpen(product){
       setModalOpen(true)
        setSelectedProduct(product);
+    }
+
+    function handleAddToCart(product){
+      addToCart(product);
     }
 
   function moreProducts() {
@@ -59,7 +63,10 @@ export default function Card(){
                         <div className="flex justify-between items-center mt-4">
                           
                           <p className="text-accent">{prod.price}</p>
-                          <Button className="bg-accent text-white py-1 px-2 rounded-md text-center hover:bg-white hover:text-accent border-2 border-accent">Add to Cart</Button>
+                          <Button onClick={(e)=>{
+                            e.stopPropagation();
+                            handleAddToCart(prod)
+                          }} className="bg-accent text-white py-1 px-2 rounded-md text-center hover:bg-white hover:text-accent border-2 border-accent">Add to Cart</Button>
                         </div>
                         </div>
                    
@@ -82,7 +89,10 @@ export default function Card(){
                                                 <p className="text-white">Warranty {selectedProduct.warranty}</p>
                                                 <p className="text-white">Free shipping</p>
                                             </div>
-                                        <Button className="bg-accent text-white py-2 px-2 rounded-md text-center hover:bg-white hover:text-accent border-2 border-accent">Add to Cart</Button>
+                                        <Button onClick={(e)=>{
+                                                e.stopPropagation();
+                                                handleAddToCart(selectedProduct)
+                                                }} className="bg-accent text-white py-2 px-2 rounded-md text-center hover:bg-white hover:text-accent border-2 border-accent">Add to Cart</Button>
                                         
                                     </div>
                             </div>
