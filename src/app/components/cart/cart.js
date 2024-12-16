@@ -7,11 +7,14 @@ import { useState } from "react";
 import Modal from "../modal/Modal";
 import { useCartContext } from "@/app/context/context";
 
+
 export default function Cart(){
 
     const [modalIsOpen,setModalIsOpen]=useState(false);
 
    const {cart, addToCart , deleteFromCart}= useCartContext()
+
+  
 
     function handleModalOpen(){
         setModalIsOpen(true);
@@ -28,6 +31,42 @@ export default function Cart(){
     function handleDeleteFromCart(productId){
         deleteFromCart(productId);
         
+    }
+
+    async function fetchToOrder(){
+        const userId=localStorage.getItem("UserLogIn")
+        const parseId=JSON.parse(userId)
+
+        console.log(parseId.id);
+       
+
+        const dataToOrder={
+            cart:cart,
+            userId:parseId.id
+        }
+
+        const response=await fetch("/api/addorder",{
+        method: "POST",
+        headers: {
+                 "Content-Type": "application/json",
+  },
+        body:JSON.stringify(dataToOrder)
+        })
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error("Failed to add order:", errorData.error);
+            return;
+          }
+        const result = await response.json();
+        console.log("Order added successfully:", result);
+        setModalIsOpen(false);
+    }
+
+    function handleAddToOrder(){
+
+        fetchToOrder()
+
     }
 
     return(
@@ -65,7 +104,7 @@ export default function Cart(){
            
         </ul>
         <div className="flex items-center justify-between">
-            <Button className="bg-accent text-white mt-10 py-2 px-2 rounded-md text-center hover:bg-white hover:text-accent border-2 border-accent">Submit order</Button>
+            <Button onClick={handleAddToOrder} className="bg-accent text-white mt-10 py-2 px-2 rounded-md text-center hover:bg-white hover:text-accent border-2 border-accent">Submit order</Button>
             {cart.length===0?<></>:(
             <h1> {cart.reduce((sum, item) => sum + (item.price * item.quantity), 0)}$</h1>
             )
