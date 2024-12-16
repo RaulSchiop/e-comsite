@@ -1,11 +1,43 @@
 "use client"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "../components/header/Hader";
 import Footer from "../components/Footer/Footer";
 import {motion} from "framer-motion"
 export default function Profile(){
 
     const [orders,setOrders]=useState([]);
+
+useEffect(()=>{
+    async function fetchOrders(){
+        const userId=localStorage.getItem("UserLogIn");
+        const parseUserId=JSON.parse(userId);
+     
+     const data={
+        userId:parseUserId.id
+     }
+    
+        const response=await fetch("/api/orders",{
+            method:"POST",
+            headers:  {"Content-Type": "application/json"},
+            body:JSON.stringify(data)
+        })
+    
+        if(!response.ok){
+            const errorData = await response.json();
+            console.error("Failed to add order:", errorData.error);
+            return;
+        }
+        const result=await response.json();
+       
+    
+        setOrders(result)
+       }
+
+       fetchOrders();  
+
+},[])
+
+console.log(orders);
 
     return(
         <div className="flex flex-col min-h-screen" >
