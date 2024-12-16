@@ -11,6 +11,7 @@ import { useCartContext } from "@/app/context/context";
 export default function Cart(){
 
     const [modalIsOpen,setModalIsOpen]=useState(false);
+    
 
    const {cart, addToCart , deleteFromCart}= useCartContext()
 
