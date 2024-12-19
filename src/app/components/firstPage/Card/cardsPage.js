@@ -31,10 +31,6 @@ export default function Card(){
   
     useEffect(() => {
 
-    let varStoage=localStorage.getItem('UserLogin')
-        if(varStoage){
-            localStorage.removeItem('UserLogin');
-        }
       async function fetchProducts() {
         try {
           const response = await fetch("/api/products");

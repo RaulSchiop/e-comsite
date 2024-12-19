@@ -22,7 +22,7 @@ export default function Header(){
                     <li className="hover:text-accent"><Link href={"/aboutUs"}>About</Link></li>
                     <li className="hover:text-accent"><Link href={"/contact"}>Contact</Link></li>
                 </ul>
-                <div className="flex items-center justify-center gap-3 ">
+                <div className="flex items-center justify-center gap-2">
                 <Cart></Cart>
 
                 <LogInButton></LogInButton>

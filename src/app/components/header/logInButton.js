@@ -8,24 +8,33 @@ import ProfileIcon from "../../../../public/ProfileIcon.svg";
 export default function LogInButton() {
   const [localStorageState, setLocalStorageState] = useState(false);
 
+  
+
+  function handleLogOut(){
+    localStorage.removeItem("UserLogIn");
+    setIsUserLoggedIn(false); 
+    window.location.reload()
+  }
+
   useEffect(() => {
+   
+    const user = JSON.parse(localStorage.getItem("UserLogIn"));
 
-localStorage.setItem('UserLogin', JSON.stringify({ userId: "12345" }));
-
-
-const user = JSON.parse(localStorage.getItem("UserLogin"));
-if (user) {
-  setLocalStorageState(true);
-} else {
-  setLocalStorageState(false); 
-}
+    if (user) {
+      setLocalStorageState(true);
+    } else {
+      setLocalStorageState(false); 
+    }
+    
 
   }, []);
 
+
   return (
+    <div className="flex items-center justify-center gap-2">
     <Button>
       <Link
-        className="flex gap-2 bg-accent p-2 rounded-md items-center justify-center text-Text text-nowrap"
+        className="flex gap-2 bg-accent p-2 rounded-md items-center justify-center text-Text"
         href={localStorageState === true ? "/profile" : "/logIn"}
       >
         {
@@ -41,5 +50,11 @@ if (user) {
         
       </Link>
     </Button>
+    { localStorageState === true ?
+    <Button onClick={handleLogOut}  
+    className="flex gap-2 border-accent border-2 p-2 rounded-md items-center justify-center text-Text"
+    >Log out</Button>:<></> 
+    }
+    </div>
   );
 }

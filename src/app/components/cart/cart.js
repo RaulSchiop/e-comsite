@@ -3,15 +3,29 @@
 import Button from "../Aminations/Btn";
 import Image from "next/image"
 import CartLogo from "../../../../public/cart.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Modal from "../modal/Modal";
 import { useCartContext } from "@/app/context/context";
 
 
 export default function Cart(){
-
     const [modalIsOpen,setModalIsOpen]=useState(false);
-    
+    const [localStorageState,setLocalStorageState]=useState(false);
+
+    useEffect(()=>{
+
+        const user = JSON.parse(localStorage.getItem("UserLogIn"));
+
+        if (user) {
+          setLocalStorageState(true);
+        } else {
+          setLocalStorageState(false); 
+        }
+
+
+    },[])
+
+
 
    const {cart, addToCart , deleteFromCart}= useCartContext()
 
@@ -70,10 +84,14 @@ export default function Cart(){
 
     return(
     <div>
-        
-        <Button onClick={handleModalOpen} className="flex gap-2 bg-accent p-2 rounded-md items-center justify-center text-Text ">
-              <Image height={30} width={30} src={CartLogo} alt="cart" />
-        </Button>
+        {localStorageState === true ? (
+  
+  <Button onClick={handleModalOpen} className="flex gap-2 bg-accent p-2 rounded-md items-center justify-center text-Text ">
+  <Image height={30} width={30} src={CartLogo} alt="cart" />
+</Button>
+
+        ):<></>}
+      
 
         
         <Modal show={modalIsOpen} onClose={handleModalClose}>
@@ -103,7 +121,9 @@ export default function Cart(){
            
         </ul>
         <div className="flex items-center justify-between">
-            <Button onClick={handleAddToOrder} className="bg-accent text-white mt-10 py-2 px-2 rounded-md text-center hover:bg-white hover:text-accent border-2 border-accent">Submit order</Button>
+            <Button onClick={handleAddToOrder} 
+             className="flex gap-2 bg-accent p-2 rounded-md items-center justify-center text-Text">
+                Submit order</Button>
             {cart.length===0?<></>:(
             <h1> {cart.reduce((sum, item) => sum + (item.price * item.quantity), 0)}$</h1>
             )
