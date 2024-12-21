@@ -12,7 +12,7 @@ export default function LogInButton() {
 
   function handleLogOut(){
     localStorage.removeItem("UserLogIn");
-    setIsUserLoggedIn(false); 
+    setLocalStorageState(false); 
     window.location.reload()
   }
 
