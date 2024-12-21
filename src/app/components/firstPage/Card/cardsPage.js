@@ -4,8 +4,10 @@ import Modal from "../../modal/Modal"
 import Button from "../../Aminations/Btn"
 import { useEffect,useState } from "react"
 import { useCartContext } from "@/app/context/context"
+import { useRouter } from "next/navigation"
 
 export default function Card(){
+    const router=useRouter()
     const {addToCart}=useCartContext()
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [products,setProducts]=useState([]);
@@ -22,7 +24,14 @@ export default function Card(){
     }
 
     function handleAddToCart(product){
-      addToCart(product);
+      
+      const user = JSON.parse(localStorage.getItem("UserLogIn"));
+      if (user) {
+        addToCart(product);
+      } else {
+        router.push("/logIn")
+      }
+      
     }
 
   function moreProducts() {

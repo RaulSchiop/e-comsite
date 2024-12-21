@@ -2,10 +2,10 @@
 import Header from "../components/header/Hader"
 
 import Image from "next/image"
-import motherBoard from "../../../public/motherBoard.png"
+
 import { useEffect, useState } from "react"
 import AnimationOpacity from "../components/Aminations/opacityAnimation"
-import Link from "next/link"
+import { useRouter } from "next/navigation"
 import Button from "../components/Aminations/Btn"
 import Modal from "../components/modal/Modal"
 import Footer from "../components/Footer/Footer"
@@ -13,6 +13,7 @@ import {motion} from "framer-motion"
 import { useCartContext } from "../context/context"
 
 export default function Products(){
+  const router=useRouter()
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [products,setProducts]=useState([]);
     const [modalOpen,setModalOpen]=useState(false);
@@ -30,7 +31,13 @@ console.log(cart)
     }
 
     function handleAddToCart(product){
-        addToCart(product);   
+      
+      const user = JSON.parse(localStorage.getItem("UserLogIn"));
+      if (user) {
+        addToCart(product);
+      } else {
+        router.push("/logIn")
+      }  
     }
           
     useEffect(() => {

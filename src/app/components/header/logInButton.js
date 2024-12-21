@@ -4,16 +4,17 @@ import Button from "../Aminations/Btn";
 import Link from "next/link";
 import Image from "next/image";
 import ProfileIcon from "../../../../public/ProfileIcon.svg";
+import { useRouter } from "next/navigation";
 
 export default function LogInButton() {
   const [localStorageState, setLocalStorageState] = useState(false);
-
+  const router=useRouter()
   
 
   function handleLogOut(){
     localStorage.removeItem("UserLogIn");
     setLocalStorageState(false); 
-    window.location.reload()
+    router.push("/")
   }
 
   useEffect(() => {
