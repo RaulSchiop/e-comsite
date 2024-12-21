@@ -38,9 +38,6 @@ export default function LogIn(){
   }
       }
       
-    
-
-
     async function handleCreateAcc(event){
       event.preventDefault();
       const formDataCreateAcc=new FormData(event.target);

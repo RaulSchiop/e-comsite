@@ -31,7 +31,7 @@ try{
 }catch(error){
 return NextResponse.json(
             {error:"internal error "+ error},
-            {status:200})
+            {status:500})
 }
 
 
