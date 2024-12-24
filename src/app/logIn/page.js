@@ -10,33 +10,45 @@ export default function LogIn(){
   const [change,setChange]=useState(true);
   const router = useRouter();
 
-    async function handleLogIn(event){
-      event.preventDefault();
-      const formDataLogIn = new FormData(event.target);
-      const  dataLog={
-        email:formDataLogIn.get('Email'),
-        password:formDataLogIn.get('Password'),
-      }
-      console.log(dataLog)
-      const  response=await fetch("/api/logIn",{
-        method:'POST',
-        headers:{
+
+  async function handleLogIn(event) {
+    event.preventDefault();
+    const formDataLogIn = new FormData(event.target);
+    const dataLog = {
+      email: formDataLogIn.get('Email'),
+      password: formDataLogIn.get('Password'),
+    };
+  
+    try {
+      const response = await fetch("/api/logIn", {
+        method: 'POST',
+        headers: {
           'Content-Type': 'application/json',
         },
-        body:JSON.stringify(dataLog)
-      })
+        body: JSON.stringify(dataLog),
+      });
+  
       const result = await response.json();
-      console.log("Login successful:", response);
-      localStorage.setItem('UserLogIn', JSON.stringify({ id: result.id }));
-      localStorage.removeItem('UserLogin');
-      router.push("/");
+  
+      console.log(response.status)
       
-      if(result){
-        setInterval(() => {
-          localStorage.removeItem('UserLogIn')
-      }, 24 * 60 * 60 * 1000);
-  }
+      if (response.status === 401) {
+        
+        alert('Wrong email or password, try again');
+
+      } else if (response.status === 200) {
+
+        localStorage.setItem('UserLogIn', JSON.stringify({ id: result.id }));
+        localStorage.removeItem('UserLogin');
+        router.push('/'); 
+
       }
+    } catch (err) {
+      console.error("Login error: ", err);
+      setError('Something went wrong. Please try again later');
+    }
+  }
+  
       
     async function handleCreateAcc(event){
       event.preventDefault();
@@ -149,7 +161,12 @@ export default function LogIn(){
                 <Button onClick={handleLayoutChange} className="flex gap-2 bg-accent p-2 rounded-md items-center justify-center text-Text">
                   Log In
                 </Button>
+                <div>
+             
+                </div>
               </motion.div>
+              
+  
             </motion.div>
           )}
         </AnimatePresence>
