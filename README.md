@@ -37,31 +37,37 @@ docker run -p 3000:3000 --name ecom raulschiop/e-com:v2.0
 ```
 
 ## Technologies Used:
-Next.js, MongoDB, Tailwind CSS, AWS S3, Docker
+Next.js, MongoDB, Tailwind CSS, AWS S3, Docker, Framer-Motion
 
 ## Functionality:
-User authentication, Cart functionality, Order management, and more.
+User authentication, Cart functionality, Order management, Problems system, and more.
 <br></br>
 
 ## Breakdown of the Technologies Used
 
-1.Next js
+__1.Next js__
 
 Next JS is a framework for the backend that works with React JS for the frontend. I used this framework for easier backend and frontend combo.
 I used the App Router, which allows for better routing and management of API endpoints. The backend endpoints are exposed via API routes, making it easy to integrate with the frontend.
 
-2.MongoDb
+__2.MongoDb__
 
 Mongo DB is my project database. I chose it over My SQL  or other databases because it has better synergy with JS and that makes it easier to work with it.
 
-3.Tailwind CSS
+__3.Tailwind CSS__
 
 Tailwind CSS is the CSS framework that I use in this project. I chose this over traditional CSS files because allows for easier and more organised styles. Tailwind CSS also makes development faster.
 
-4.AWS S3
+__4.AWS S3__
 
 AWS S3 was used only for storing the images providing an easier and more efficient way to manage image storage.
 
-5.Docker
+__5.Docker__
 
 Docker was used to ensure the app can run anywhere, on any system, by containerizing the application.
+
+__6.Framer-Motion__
+
+Framer-Motion was used for the animations on this app.
+
+<br></br>
