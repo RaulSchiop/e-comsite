@@ -72,15 +72,31 @@ Framer-Motion was used for the animations on this app.
 
 <br></br>
 
-![Main page](/public/mainPage.png)
+## Breakdown of the Roating
 
-![About us](/public/aboutUsPage.png)
+__Main page__
+
+![Main page](/public/mainPage.png)
+On the main page, you can see details about the website theme and also you can see at the end of the page products. (I will put a video of all the website)
+
+__Products page__
 
 ![Products page](/public/productsPage.png)
+On the products page you can interact with the products add them to your cart see them,if you click on them you will see more details.
+
+__About Us Page__
+
+![About us](/public/aboutUsPage.png)
+A page to see more about the website story.
+__Contact us Page__
 
 ![Contact us Page](/public/contactUsPage.png)
+On the Contact Us page, the user can send feedback and problems to solve about the site.
+__Log In Page__
 
+Log in form
 ![ log in](/public/loginPage.png)
 
+Register form
 ![register page](/public/registerPage.png)
 
