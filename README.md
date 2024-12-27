@@ -71,3 +71,16 @@ __6.Framer-Motion__
 Framer-Motion was used for the animations on this app.
 
 <br></br>
+
+![Main page](/public/mainPage.png)
+
+![About us](/public/aboutUsPage.png)
+
+![Products page](/public/productsPage.png)
+
+![Contact us Page](/public/contactUsPage.png)
+
+![ log in](/public/loginPage.png)
+
+![register page](/public/registerPage.png)
+
