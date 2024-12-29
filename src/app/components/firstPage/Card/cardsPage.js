@@ -64,7 +64,7 @@ export default function Card(){
         <div className="flex items-center justify-center flex-col p-8">
       
                 <h1 className=" text-accent text-3xl lg:text-5xl font-bold mb-10">New Arrivals</h1>
-                <ul className="grid grid-cols-3 gap-6 mb-6 ">
+                <ul className="grid lg:grid-cols-3 gap-6 mb-6 md:grid-cols-3 ">
                 {products.slice(0, sliceNumber).map((prod,index)=>(
                     <li key={prod.id || index} className="bg-black rounded-xl p-4 flex flex-col justify-between h-full">
                       <div className="flex flex-col justify-between h-full w-full" onClick={()=>handleModalOpen(prod)}>

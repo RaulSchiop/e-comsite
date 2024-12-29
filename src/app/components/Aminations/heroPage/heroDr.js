@@ -4,7 +4,8 @@ import { motion, useInView } from 'framer-motion';
 
 const HeroDr = ({ children, className }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const isInView = useInView(ref, { once: true, amount: 0.5, rootMargin: '0px' });
+
 
   return (
     <motion.div

@@ -15,7 +15,7 @@ export default function HeroSection(){
           <p className="text-secondarytext text-sm lg:text-lg mb-6">Explore the latest technology to elevate your gaming, productivity, and entertainment experience. Build your dream setup today!</p>
           <Link  href={"/products"}> <Button className="bg-accent text-white py-2 px-4 rounded-md text-center hover:bg-white hover:text-accent border-2 border-accent">Shop Now</Button></Link>
   </HeroSt>
-  <div className="flex items-center justify-center lg:w-1/2 mt-10 lg:mt-0">
+  <div className="hidden lg:flex lg:items-center lg:justify-center  lg:w-1/2 mt-10 lg:mt-0">
    
    <HeroDr><Image src={HeroImage} alt="Dekstop iamge"></Image></HeroDr>
 
