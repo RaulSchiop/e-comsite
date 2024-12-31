@@ -100,3 +100,6 @@ Log in form
 Register form
 ![register page](/public/registerPage.png)
 
+## Video of the site
+
+[Watch this video on YouTube](https://youtu.be/nCYoxLLtJjA)
