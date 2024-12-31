@@ -88,7 +88,7 @@ export default function Card(){
 
 {modalOpen && selectedProduct &&(
                       <Modal show={modalOpen} onClose={handleModalClose} >
-                      <div className=" w-full p-8 flex justify-center flex-col items-center">
+                      <div className=" w-full p-0 flex justify-center flex-col items-center ">
                           <h1 className="text-4xl font-semibold text-white mb-6">{selectedProduct.name}</h1>
                             <div className="flex flex-col md:flex-row gap-10 max-w-6xl w-full">
                               <div className="flex items-center justify-center w-full md:w-1/2">
@@ -96,7 +96,7 @@ export default function Card(){
                                   <Image src={selectedProduct.images[0]} alt="Desktop Product" width={800} height={800} />
                                 </div>
                               </div>
-                                    <div className="flex flex-col justify-center w-full md:w-1/2 ">
+                                    <div className="flex flex-col justify-center w-full md:w-1/2 sm:w-full ">
                                         <h2 className="text-accent text-3xl font-bold mb-4">{selectedProduct.price}$</h2>
                                             <div className=" text-secondary text-lg mb-6">
                                                 <p className="text-white">Warranty {selectedProduct.warranty}</p>
@@ -109,7 +109,7 @@ export default function Card(){
                                     </div>
                                     
                             </div>
-                            <div className="grid grid-cols-3 grid-rows-2 gap-4 mt-6">
+                            <div className="grid lg:grid-cols-3 lg:grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-4 mt-6">
                                 {Array.isArray(selectedProduct.features) ? (
                                   selectedProduct.features.map((feature, idx) => (
                                     <div key={idx} className="bg-gray-800 text-white rounded-lg p-4 shadow">
