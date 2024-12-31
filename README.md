@@ -102,4 +102,4 @@ Register form
 
 ## Video of the site
 
-[Watch this video on YouTube](https://youtu.be/nCYoxLLtJjA)
+[Watch the video of the site on YouTube](https://youtu.be/nCYoxLLtJjA)
