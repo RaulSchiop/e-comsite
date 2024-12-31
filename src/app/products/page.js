@@ -98,7 +98,7 @@ console.log(cart)
                    ))}
                    {modalOpen && selectedProduct &&(
                       <Modal show={modalOpen} onClose={handleModalClose} >
-                      <div className=" w-full p-8 flex justify-center flex-col items-center">
+                      <div className=" w-full  flex justify-center flex-col items-center">
                           <h1 className="text-4xl font-semibold text-white mb-6">{selectedProduct.name}</h1>
                             <div className="flex flex-col md:flex-row gap-10 max-w-6xl w-full">
                               <div className="flex items-center justify-center w-full md:w-1/2">
@@ -119,7 +119,7 @@ console.log(cart)
                                     </div>
                                     
                             </div>
-                            <div className="grid grid-cols-3 grid-rows-2 gap-4 mt-6">
+                            <div className="grid lg:grid-cols-3 lg:grid-rows-2 md:grid-cols-2 md:grid-rows-2 gap-4 mt-6">
                                 {Array.isArray(selectedProduct.features) ? (
                                   selectedProduct.features.map((feature, idx) => (
                                     <div key={idx} className="bg-gray-800 text-white rounded-lg p-4 shadow">
