@@ -12,10 +12,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-
-    - name: Check Docker version
-      run: docker --version
-
+    
     - name: Pull Docker image
       run: docker pull raulschiop/e-com:latest
 
