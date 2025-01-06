@@ -7,18 +7,22 @@ on:
     branches: [ "main" ]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
-    
+
+    - name: Check Docker version
+      run: docker --version
+
     - name: Pull Docker image
       run: docker pull raulschiop/e-com:latest
 
-    - name: Run Docker container
-      run: docker run -d --name ecom raulschiop/e-com:latest
+    - name: Stop and remove existing container
+      run: |
+        docker stop ecom || true
+        docker rm ecom || true
 
-      
+    - name: Run Docker container
+      run: docker run -d -p 3000:3000 --name ecom raulschiop/e-com:latest
