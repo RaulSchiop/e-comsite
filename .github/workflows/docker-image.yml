@@ -19,10 +19,5 @@ jobs:
     - name: Pull Docker image
       run: docker pull raulschiop/e-com:latest
 
-    - name: Stop and remove existing container
-      run: |
-        docker stop ecom || true
-        docker rm ecom || true
-
     - name: Run Docker container
-      run: docker run -d -p 3000:3000 --name ecom raulschiop/e-com:latest
+      run: docker run -p 3000:3000 --name ecom raulschiop/e-com:latest
