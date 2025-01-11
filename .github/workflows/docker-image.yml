@@ -30,4 +30,5 @@ jobs:
           docker buildx build --platform linux/amd64,linux/arm64 \
             -t raulschiop/e-com:latest --push . 
         env:
-          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}  
+
