@@ -13,25 +13,6 @@ docker run -p 3000:3000 --name ecom raulschiop/e-com:latest
 
 ```
 
-Windows
-
-```bash
-
-docker pull raulschiop/e-com:v1.0
-
-docker run -p 3000:3000 --name ecom raulschiop/e-com:v1.0
-
-```
- Mac Os / Linux
-
-```bash
-
-docker pull raulschiop/e-com:v2.0
-
-docker run -p 3000:3000 --name ecom raulschiop/e-com:v2.0
-
-```
-
 ## 2.Local computer (if you download it):
 
 1.Install the dependencies:
