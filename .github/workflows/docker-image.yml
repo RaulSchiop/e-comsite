@@ -25,10 +25,12 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}  
+
       - name: Build and push Docker image
         run: |
           docker buildx build --platform linux/amd64,linux/arm64 \
             -t raulschiop/e-com:latest --push . 
-        env:
-          MONGODB_URI: ${{ secrets.MONGODB_URI }}  
+      
 
