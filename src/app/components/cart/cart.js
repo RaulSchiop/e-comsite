@@ -110,12 +110,16 @@ export default function Cart() {
                )}
             </ul>
             <div className="flex items-center justify-between">
-               <Button
-                  onClick={handleAddToOrder}
-                  className="flex gap-2 bg-accent p-2 rounded-md items-center justify-center text-Text"
-               >
-                  Submit order
-               </Button>
+               {cart.length === 0 ? (
+                  <></>
+               ) : (
+                  <Button
+                     onClick={handleAddToOrder}
+                     className="flex gap-2 bg-accent p-2 rounded-md items-center justify-center text-Text"
+                  >
+                     Submit order
+                  </Button>
+               )}
                {cart.length === 0 ? (
                   <></>
                ) : (
