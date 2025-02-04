@@ -28,6 +28,9 @@ export default function Header() {
                      <Link href={"/products"}>Products</Link>
                   </li>
                   <li className="hover:text-accent">
+                     <Link href={"/configuration"}>Custom Pc</Link>
+                  </li>
+                  <li className="hover:text-accent">
                      <Link href={"/aboutUs"}>About</Link>
                   </li>
                   <li className="hover:text-accent">
