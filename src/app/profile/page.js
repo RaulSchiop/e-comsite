@@ -83,9 +83,7 @@ export default function Profile() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 1 }}
-         >
-            <Footer></Footer>
-         </motion.div>
+         ></motion.div>
       </div>
    );
 }
