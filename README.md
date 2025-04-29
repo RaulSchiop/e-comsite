@@ -94,4 +94,4 @@ Register form
 
 ## Video of the site
 
-[Watch the video of the site on YouTube](https://youtu.be/nCYoxLLtJjA)  (need to update it )
+[Watch the video of the site on YouTube](https://www.youtube.com/watch?v=J4EdCU7H6Zc)  
