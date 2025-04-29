@@ -16,8 +16,6 @@ module.exports = {
         headerBg:"#1E1C1C",
         secondarytext:"#5f5959",
        cardBackground: "#000000"
-
-
       },
     },
   },

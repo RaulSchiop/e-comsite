@@ -14,6 +14,7 @@ export default function LogInButton() {
       localStorage.removeItem("UserLogIn");
       setLocalStorageState(false);
       router.push("/");
+      window.location.reload();
    }
 
    useEffect(() => {
