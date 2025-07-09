@@ -31,6 +31,7 @@ export default function Profile() {
          setOrders(result);
       }
 
+      // Fetch orders when the component mounts or when userId changes
       fetchOrders();
    }, []);
 
